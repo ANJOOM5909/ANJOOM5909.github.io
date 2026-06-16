@@ -1,171 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Fathima Anjoom K</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Helvetica,Arial,sans-serif;
-background:white;
-color:black;
-overflow-x:hidden;
-}
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:5rem;
-font-weight:700;
-}
-
-.hero p{
-margin-top:20px;
-font-size:1.2rem;
-}
-
-.project{
-padding:100px 0;
-}
-
-.project img{
-width:100%;
-display:block;
-}
-
-.project-title{
-padding:40px;
-font-size:2rem;
-font-weight:600;
-}
-
-.about{
-padding:120px 10%;
-font-size:1.2rem;
-line-height:1.8;
-}
-
-.contact{
-padding:120px 10%;
-}
-
-.contact h2{
-font-size:4rem;
-margin-bottom:20px;
-}
-
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathima Anjoom K | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<section class="hero">
-<h1>FATHIMA ANJOOM K</h1>
-<p>
-Architectural Visualization • Interior Design • Civil Engineering
-</p>
-</section>
+    <!-- Header Navigation -->
+    <header class="premium-nav">
+        <div class="logo">FA.</div>
+        <nav>
+            <a href="#about" class="nav-link">About</a>
+            <a href="mailto:anju39151@gmail.com" class="nav-link contact-btn">Let's Talk</a>
+        </nav>
+    </header>
 
-<section class="project fade">
-<div class="project-title">
-Apartment Interior
-</div>
-<img src="APARTMENT.PNG">
-</section>
+    <!-- Main Premium Gallery Wrapper -->
+    <main class="horizontal-scroll-container">
+        
+        <!-- INTRO SCREEN -->
+        <section class="gallery-card intro-card">
+            <div class="intro-content">
+                <span class="subtitle">// 3D VISUALIZER & INTERIOR DESIGNER</span>
+                <h1 class="main-title">Fathima Anjoom K</h1>
+                <p class="tagline">Bridging civil engineering precision with cinematic architectural visualization. Deliberate, purposeful design.</p>
+                <div class="scroll-indicator">Scroll Down / Swipe Left →</div>
+            </div>
+        </section>
 
-<section class="project fade">
-<div class="project-title">
-Arabic Bedroom
-</div>
-<img src="BEDROOM ARABIC STYLE.png">
-</section>
+        <!-- PROJECT 1: EXTERIOR -->
+        <section class="gallery-card project-card">
+            <div class="project-image-wrapper">
+                <img src="images/EXTERIOR 4.PNG" alt="Modern Residential Exterior" class="project-img">
+                <div class="project-overlay">
+                    <div class="project-meta">
+                        <span class="proj-num">01</span>
+                        <h2>Modern Exterior Visualization</h2>
+                        <p>High-fidelity exterior rendering emphasizing spatial design intent, ambient lighting, and realistic material finishes.</p>
+                        <div class="tech-tags">
+                            <span>SketchUp</span><span>Lumion</span><span>AI Workflows</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="project fade">
-<div class="project-title">
-Luxury Exterior
-</div>
-<img src="EXTERIOR 1.PNG">
-</section>
+        <!-- PROJECT 2: ARABIC BEDROOM -->
+        <section class="gallery-card project-card">
+            <div class="project-image-wrapper">
+                <img src="images/BEDROOM ARABIC STYLE.png" alt="Arabic Style Bedroom Interior" class="project-img">
+                <div class="project-overlay">
+                    <div class="project-meta">
+                        <span class="proj-num">02</span>
+                        <h2>Arabic Style Bedroom</h2>
+                        <p>Immersive, culturally rich interior concept balancing detailed ornamentation with modern luxury layouts.</p>
+                        <div class="tech-tags">
+                            <span>Revit</span><span>D5 Render</span><span>Spatial Planning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="project fade">
-<div class="project-title">
-Kitchen Design
-</div>
-<img src="KITCHEN.PNG">
-</section>
+        <!-- PROJECT 3: KITCHEN -->
+        <section class="gallery-card project-card">
+            <div class="project-image-wrapper">
+                <img src="images/KITCHEN.png" alt="Modern Kitchen Design" class="project-img">
+                <div class="project-overlay">
+                    <div class="project-meta">
+                        <span class="proj-num">03</span>
+                        <h2>Contemporary Kitchen Design</h2>
+                        <p>Comprehensive layout with a strong focus on space efficiency, circulation flow, and ergonomic design coherence.</p>
+                        <div class="tech-tags">
+                            <span>AutoCAD</span><span>Lumion</span><span>Detailing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="project fade">
-<div class="project-title">
-Living Room
-</div>
-<img src="LIVING ROOM 1.png">
-</section>
+        <!-- PROJECT 4: LIVING ROOM -->
+        <section class="gallery-card project-card">
+            <div class="project-image-wrapper">
+                <img src="images/LIVING ROOM 1.png" alt="Living Room Interior" class="project-img">
+                <div class="project-overlay">
+                    <div class="project-meta">
+                        <span class="proj-num">04</span>
+                        <h2>Residential Living Space</h2>
+                        <p>Polished, presentation-ready render optimized to communicate design proposals effectively to stakeholders.</p>
+                        <div class="tech-tags">
+                            <span>SketchUp</span><span>D5 Render</span><span>Interior Styling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="about fade">
+        <!-- ABOUT & CONTACT CLOSING SCREEN -->
+        <section id="about" class="gallery-card about-card">
+            <div class="about-content">
+                <span class="subtitle">// THE ENGINEER'S EDGE</span>
+                <h2>Behind the Design</h2>
+                <p class="about-text">
+                    With a Bachelor's degree in Civil Engineering and extensive experience as a Software Trainer at SolidCAD Institute, my architectural visualizations aren't just aesthetically premium—they are structurally informed and technically precise. From regulatory documentation to hyper-realistic renders, I build visual stories with purpose and consistency.
+                </p>
+                <hr class="divider">
+                <div class="contact-details">
+                    <p>Based in Kerala, India / Available Remotely</p>
+                    <a href="mailto:anju39151@gmail.com" class="email-link">anju39151@gmail.com</a>
+                    <p class="phone">+91 6235365909</p>
+                </div>
+            </div>
+        </section>
 
-Civil Engineering graduate and Architectural Visualizer
-specializing in residential design, interior visualization,
-and photorealistic rendering.
+    </main>
 
-Experienced with Revit, AutoCAD, SketchUp,
-Lumion and D5 Render.
-
-</section>
-
-<section class="contact fade">
-<h2>Available for Opportunities</h2>
-
-<p>Email: anju39151@gmail.com</p>
-
-<p>Kerala, India</p>
-
-</section>
-
-<script>
-
-const elements=document.querySelectorAll('.fade');
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
-});
-});
-
-elements.forEach(el=>{
-observer.observe(el);
-});
-
-</script>
-
+    <!-- Script to convert vertical scroll to horizontal scroll -->
+    <script>
+        const scrollContainer = document.querySelector('.horizontal-scroll-container');
+        window.addEventListener('wheel', (evt) => {
+            if (window.innerWidth > 768) {
+                evt.preventDefault();
+                scrollContainer.scrollLeft += evt.deltaY;
+            }
+        });
+    </script>
 </body>
 </html>
