@@ -1,4 +1,4 @@
-/* --- RESET & PREMIUM THEME CONFIGURATION --- */
+/* --- ARCHITECTURAL MINIMALISM & CORE CONFIGURATION --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,12 @@
 }
 
 :root {
-    --bg-dark: #0a0a0a;
-    --text-light: #f5f5f5;
-    --text-muted: #8a8a8a;
-    --accent: #c5a880; /* Elegant champagne/gold accent */
+    --bg-dark: #070708;
+    --card-bg: #0e0f12;
+    --text-light: #f4f5f6;
+    --text-muted: #888d96;
+    --accent: #d4af37; /* Warm Champagne Accent */
+    --blueprint-line: rgba(212, 175, 55, 0.04);
     --font-heading: 'Cinzel', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 }
@@ -22,41 +24,48 @@ body {
     height: 100vh;
 }
 
-/* --- PREMIUM NAVIGATION --- */
+/* Blueprint Line Texture Background to make the site look premium and unique */
+.blueprint-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px),
+                      linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
+}
+
+/* --- NAVIGATION --- */
 .premium-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 50px;
+    padding: 35px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: linear-gradient(to bottom, rgba(10,10,10,0.8), rgba(10,10,10,0));
-    pointer-events: none;
 }
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    letter-spacing: 2px;
-    color: var(--text-light);
-}
-
-.premium-nav nav {
-    pointer-events: auto;
+    letter-spacing: 3px;
 }
 
 .nav-link {
     color: var(--text-light);
     text-decoration: none;
-    margin-left: 30px;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    margin-left: 40px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .nav-link:hover {
@@ -64,18 +73,19 @@ body {
 }
 
 .contact-btn {
-    border: 1px solid var(--text-light);
-    padding: 10px 20px;
-    border-radius: 4px;
+    border: 1px solid var(--accent);
+    padding: 12px 24px;
+    border-radius: 0px; /* Sharp technical edge */
+    color: var(--accent);
     transition: all 0.3s ease;
 }
 
 .contact-btn:hover {
-    background-color: var(--text-light);
+    background-color: var(--accent);
     color: var(--bg-dark);
 }
 
-/* --- HORIZONTAL LAYOUT ENGINE --- */
+/* --- SCROLL ENGINE --- */
 .horizontal-scroll-container {
     display: flex;
     flex-direction: row;
@@ -84,163 +94,274 @@ body {
     overflow-x: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Hide standard scrollbar */
+    scrollbar-width: none;
+    position: relative;
+    z-index: 2;
 }
 
 .horizontal-scroll-container::-webkit-scrollbar {
-    display: none; /* Hide webkit scrollbar */
+    display: none;
 }
 
-/* --- GALLERY CARDS --- */
+/* --- RE-ENGINEERED CONTAINER SYSTEM --- */
 .gallery-card {
     min-width: 100vw;
     height: 100vh;
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    padding: 0 10%;
-    position: relative;
+    padding: 0 8%;
 }
 
-/* Intro Card Styling */
+/* INTRO SCREEN */
 .intro-card {
-    background-color: #0d0d0d;
+    background-color: transparent;
 }
 
 .intro-content {
-    max-width: 700px;
+    max-width: 800px;
 }
 
 .subtitle {
     font-size: 0.85rem;
     color: var(--accent);
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .main-title {
     font-family: var(--font-heading);
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-weight: 400;
     line-height: 1.1;
-    margin-bottom: 25px;
-    letter-spacing: -1px;
+    margin-bottom: 30px;
 }
 
 .tagline {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.7;
     font-weight: 300;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
-.scroll-indicator {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent);
-    opacity: 0.7;
+/* PROFILE CARD WITH IMAGE AND SKILL TILES */
+.profile-card {
+    min-width: 110vw;
 }
 
-/* Interactive Project Card Layout */
-.project-card {
-    padding: 0 5%;
-    min-width: 85vw; /* Allows next project to peek in on the edge */
-}
-
-.project-image-wrapper {
+.profile-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 60px;
     width: 100%;
-    height: 75vh;
+    align-items: center;
+}
+
+.profile-frame {
+    width: 100%;
+    height: 500px;
+    background: #131419;
+    border: 1px solid rgba(255,255,255,0.05);
     position: relative;
     overflow: hidden;
-    border-radius: 4px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.project-img {
+.profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.75);
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.project-image-wrapper:hover .project-img {
-    transform: scale(1.04);
-}
-
-.project-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
-    padding: 40px;
-    background: linear-gradient(to top, rgba(10,10,10,0.9) 20%, rgba(10,10,10,0));
+    z-index: 2;
+}
+
+.profile-placeholder-art {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: rgba(255,255,255,0.05);
 }
 
-.project-meta {
-    max-width: 600px;
-}
-
-.proj-num {
+.profile-placeholder-art span {
+    font-size: 6rem;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+}
+
+.blueprint-text {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: rgba(212,175,55,0.3);
+}
+
+.section-tag {
     color: var(--accent);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
     display: block;
-    margin-bottom: 10px;
-}
-
-.project-meta h2 {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 400;
     margin-bottom: 15px;
 }
 
-.project-meta p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.5;
+.profile-details h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
-.tech-tags span {
-    font-size: 0.75rem;
+.profile-bio {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+.skills-blueprint-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.skill-category {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+}
+
+.skill-category h4 {
+    font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid rgba(245,245,245,0.2);
-    padding: 5px 12px;
-    margin-right: 10px;
-    border-radius: 20px;
+    margin-bottom: 8px;
     color: var(--text-light);
 }
 
-/* About / Contact Closing Card */
-.about-card {
-    min-width: 100vw;
-    background-color: #080808;
-    display: flex;
-    justify-content: center;
+.skill-category p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
-.about-content {
-    max-width: 650px;
+/* --- EDITORIAL GALLERY LAYOUT (PREVENTS CROPPING) --- */
+.project-card {
+    min-width: 95vw;
+    padding: 0 4%;
+}
+
+.editorial-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.reverse-layout {
+    grid-template-columns: 0.8fr 1.4fr;
+}
+
+.reverse-layout .project-image-frame {
+    order: 2;
+}
+
+.project-image-frame {
+    width: 100%;
+    height: 65vh;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 15px; /* Creates elegant protective border margins around renders */
+}
+
+.gallery-render {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* CRITICAL: Forces full ratio rendering without losing pixels */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-image-frame:hover .gallery-render {
+    transform: scale(1.02);
+}
+
+/* SIDEBAR CONTROLS */
+.project-description-sidebar {
+    padding: 20px 0;
+}
+
+.proj-index {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.project-description-sidebar h3 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.project-description-sidebar p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.spec-list {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+}
+
+.spec-list div {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.spec-list strong {
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 120px;
+}
+
+/* CLOSING SCREEN */
+.contact-card {
+    justify-content: center;
+    background-color: transparent;
+}
+
+.contact-content {
+    max-width: 700px;
     text-align: center;
 }
 
-.about-content h2 {
+.contact-content h2 {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 400;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-.about-text {
-    font-size: 1.1rem;
+.contact-text {
+    font-size: 1.15rem;
     color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 40px;
@@ -256,57 +377,49 @@ body {
 .contact-details p {
     font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .email-link {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--accent);
     text-decoration: none;
-    transition: opacity 0.3s;
-}
-
-.email-link:hover {
-    opacity: 0.8;
+    letter-spacing: 1px;
 }
 
 .phone {
-    font-size: 1.1rem !important;
-    margin-top: 10px;
+    font-size: 1.2rem !important;
     color: var(--text-light) !important;
+    margin-top: 15px;
 }
 
-/* --- MOBILE RESPONSIVENESS BREAKPOINT --- */
-@media (max-width: 768px) {
+/* --- FULL RESPONSIVE FALLBACKS FOR LAPTOPS/TABLETS/MOBILES --- */
+@media (max-width: 992px) {
     .horizontal-scroll-container {
         flex-direction: column;
         height: auto;
         overflow-y: auto;
-        overflow-x: hidden;
     }
     .gallery-card {
         min-width: 100%;
         height: auto;
-        padding: 120px 24px 60px 24px;
+        padding: 140px 30px 60px 30px;
     }
-    .project-card {
+    .profile-card, .project-card {
         min-width: 100%;
-        padding: 40px 24px;
     }
-    .project-image-wrapper {
-        height: 50vh;
+    .profile-layout, .editorial-layout, .reverse-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .reverse-layout .project-image-frame {
+        order: 0;
+    }
+    .project-image-frame {
+        height: 45vh;
     }
     .main-title {
-        font-size: 2.8rem;
-    }
-    .project-meta h2 {
-        font-size: 1.6rem;
-    }
-    .premium-nav {
-        padding: 20px;
-    }
-    .nav-link {
-        margin-left: 15px;
+        font-size: 3rem;
     }
 }
