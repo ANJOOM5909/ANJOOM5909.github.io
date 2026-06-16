@@ -1,0 +1,312 @@
+/* --- RESET & PREMIUM THEME CONFIGURATION --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #0a0a0a;
+    --text-light: #f5f5f5;
+    --text-muted: #8a8a8a;
+    --accent: #c5a880; /* Elegant champagne/gold accent */
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* --- PREMIUM NAVIGATION --- */
+.premium-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.8), rgba(10,10,10,0));
+    pointer-events: none;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text-light);
+}
+
+.premium-nav nav {
+    pointer-events: auto;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.contact-btn {
+    border: 1px solid var(--text-light);
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+}
+
+/* --- HORIZONTAL LAYOUT ENGINE --- */
+.horizontal-scroll-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide standard scrollbar */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    display: none; /* Hide webkit scrollbar */
+}
+
+/* --- GALLERY CARDS --- */
+.gallery-card {
+    min-width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+/* Intro Card Styling */
+.intro-card {
+    background-color: #0d0d0d;
+}
+
+.intro-content {
+    max-width: 700px;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.scroll-indicator {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.7;
+}
+
+/* Interactive Project Card Layout */
+.project-card {
+    padding: 0 5%;
+    min-width: 85vw; /* Allows next project to peek in on the edge */
+}
+
+.project-image-wrapper {
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.project-image-wrapper:hover .project-img {
+    transform: scale(1.04);
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(10,10,10,0.9) 20%, rgba(10,10,10,0));
+    display: flex;
+    align-items: flex-end;
+}
+
+.project-meta {
+    max-width: 600px;
+}
+
+.proj-num {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.project-meta h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.project-meta p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.tech-tags span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(245,245,245,0.2);
+    padding: 5px 12px;
+    margin-right: 10px;
+    border-radius: 20px;
+    color: var(--text-light);
+}
+
+/* About / Contact Closing Card */
+.about-card {
+    min-width: 100vw;
+    background-color: #080808;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    max-width: 650px;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+    margin-bottom: 40px;
+}
+
+.contact-details p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.email-link {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.email-link:hover {
+    opacity: 0.8;
+}
+
+.phone {
+    font-size: 1.1rem !important;
+    margin-top: 10px;
+    color: var(--text-light) !important;
+}
+
+/* --- MOBILE RESPONSIVENESS BREAKPOINT --- */
+@media (max-width: 768px) {
+    .horizontal-scroll-container {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .gallery-card {
+        min-width: 100%;
+        height: auto;
+        padding: 120px 24px 60px 24px;
+    }
+    .project-card {
+        min-width: 100%;
+        padding: 40px 24px;
+    }
+    .project-image-wrapper {
+        height: 50vh;
+    }
+    .main-title {
+        font-size: 2.8rem;
+    }
+    .project-meta h2 {
+        font-size: 1.6rem;
+    }
+    .premium-nav {
+        padding: 20px;
+    }
+    .nav-link {
+        margin-left: 15px;
+    }
+}
